@@ -5,7 +5,7 @@ description: >-
   日記とか、備忘録とか。
 lang: ja-JP
 timezone: Asia/Tokyo
-repo: https://github.com/R1dge919/r1dge919.github.io # site repo [optional]
+repo: https://github.com/R1dge919/blog # site repo [optional]
 data-theme: dark # default theme "dark" | "light"
 discus-identifier: powex # replace with your disqus shortname
 
@@ -23,7 +23,7 @@ googlewebfonts: family=M+PLUS+Rounded+1c:wght@400;700&family=Source+Code+Pro:ita
 
 # URL settings
 url: "https://r1dge919.github.io/" # Domain Name of host. [username].github.io for github pages
-baseurl: "" # sub folder for jekyll site. only if jekyll site not in root of host. leave blank if not wishd. always add / in front.
+baseurl: "/blog" # sub folder for jekyll site. only if jekyll site not in root of host. leave blank if not wishd. always add / in front.
 permalink: pretty
 
 # local
