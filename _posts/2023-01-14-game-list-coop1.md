@@ -78,7 +78,8 @@ tags: ゲーム 布教
 
 ---
 
-> ここからは、コレを書いている人の趣味100%のゲーム……
+> この下2作は、コレを書いている人の趣味100%となります。  
+……はい。テロハント系のゲームです。誰かの心に刺さると信じて書きました。
 
 ## [GROUND BRANCH](https://store.steampowered.com/app/16900/GROUND_BRANCH/)
 ![](https://cdn.akamai.steamstatic.com/steam/apps/16900/ss_c34bb405592e40cdc4ef825a628d47233b68164a.jpg?t=1659147602)
