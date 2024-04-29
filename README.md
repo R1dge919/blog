@@ -5,8 +5,6 @@ permalink: /
 ---
 
 Make Jelly site have a GitBook look!  
-JP font is not supported?  
-日本語はサポートされていない？
 
 ## Demo
 
