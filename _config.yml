@@ -24,29 +24,7 @@ toc:
 # customize the link favicon in header, will be {{site.baseurl}}/{{site.favicon_path}}
 favicon_path:     /assets/gitbook/images/favicon.ico
 
-# markdown render engine.        ```yaml
-        sensors:
-            - tpacpi: /proc/acpi/ibm/thermal
-            indices: [0]  # 各種センサーの温度情報を持つ。0番目（CPU）の情報を使うよう指定している
-        
-        fans:
-            - tpacpi: /proc/acpi/ibm/fan # 制御対象ファンを指定
-        
-        levels: # 温度に応じた回転レベルを設定
-            # [レベル値, 最低温度, 最大温度]
-            # 温度範囲は重ねておくことが望ましいらしい
-            # （2つの範囲にまたがる温度のときは、上位レベルを参照しているように見える）
-            - [0, 0,  41]
-            - [1, 38, 51]
-            - [2, 45, 56]
-            - [3, 51, 61]
-            - [4, 55, 64]
-            - [5, 60, 66]
-            - [6, 63, 68]
-            - [7, 65, 74]
-            - [127, 70, 32767] # 127は最大速度（disengagedと同じ）らしい
-        ```
-
+# markdown render engine.
 markdown:         kramdown
 kramdown:
   auto_ids:               true
@@ -58,7 +36,7 @@ kramdown:
   syntax_highlighter_opts:
     guess_lang:           true
 
-syntax_highlighter_style: thankful_eyes
+syntax_highlighter_style: colorful
 
 markdown_ext:             markdown,mkdown,mkdn,mkd,md
 
