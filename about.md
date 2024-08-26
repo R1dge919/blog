@@ -3,4 +3,4 @@ layout: page
 title: About
 ---
 
-Something about me.
+備忘録。頻繁にテーマを変えていたりする。
