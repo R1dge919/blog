@@ -1,3 +1,11 @@
+---
+title: "How to publish Obsidian notes with Quartz on GitHub Pages"
+draft: false
+tags:
+  - 
+---
+ 
+
 https://app.hackthebox.com/machines/Cap
 ターゲットマシンIPアドレス：`10.10.10.245`
 
