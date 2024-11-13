@@ -21,11 +21,12 @@ tags:
 - node.jsとnpmのインストール
 - gitのインストール
 - GitHubへのSSH公開鍵の登録
-	- プッシュ等の際にHTTPS/SSHのどちらか選ぶのですが、HTTPSのほうは「トークン」？の登録が必要なようです
+	- プッシュ等の際にHTTPS/SSHのどちらか選ぶのですが、HTTPSのほうは「トークン」の登録が必要なようです
 	- Git、GitHubよく分かっていないので、自分はSSHのほうで作業を行いました
 
 ### Quartz4のクローン
 - 今回はリポジトリ名「test_quartz」として複製します
+	- 今後も頻繁に登場します。適宜自分のリポジトリ名に置き換えてください。
 ```sh
 $ git clone https://github.com/jackyzha0/quartz.git test_quartz
 $ cd test_quartz
@@ -51,19 +52,19 @@ Started a Quartz server listening at http://localhost:8080
 - SSHの接続情報をコピーしておきます
 
 ### リモートリポジトリを書き換える
-- 現在、Quartz4をクローンしたものであるため、このままだとQuartz4のオリジナルのリポジトリを追跡しようとします
-- 1つ前の手順で作成した（自分のページ用の）リポジトリを追跡するよう、設定を変更します
+- 現在使用しているリポジトリはQuartz4をクローンしたものであるため、このままだとQuartz4のオリジナルのリポジトリを追跡しようとします
+- 1つ前の手順で作成したリポジトリを追跡するよう、設定を変更します
 ```sh
 $ git remote -v                                                
 origin	https://github.com/jackyzha0/quartz.git (fetch)
 origin	https://github.com/jackyzha0/quartz.git (push)
 upstream	https://github.com/jackyzha0/quartz.git (fetch)
-upstream	https://github.com/jackyzha0/quartz.git (push)
-                                                                                
+
 $ git remote rm origin
-                                                                                
+
+# 先ほどコピーした内容を貼り付ける
 $ git remote add origin git@github.com:R1dge919/test_quartz.git
-                                                                                
+
 $ git remote -v                                                
 origin	git@github.com:R1dge919/test_quartz.git (fetch)
 origin	git@github.com:R1dge919/test_quartz.git (push)
@@ -75,7 +76,7 @@ upstream	https://github.com/jackyzha0/quartz.git (push)
 - GitHub Pages用の設定ファイルの内容が記載されています
 - この内容をコピーして、リポジトリ内`test_quartz/.github/workflows/deploy.yml`を作成します
 	- 必ず上記リンク（公式サイト）のものを使用しましょう
-	- 自分は先駆者が転記していたものを使おうとしたせいで、バージョンが古いなどのエラーが発生して苦しみました……
+	- 自分は先駆者が転記していたものを使おうとしたせいで、バージョンが古いなどのエラーが発生していっぱい怒られました……
 
 
 ### リモートリポジトリとの初回同期
