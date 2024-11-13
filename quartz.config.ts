@@ -9,7 +9,7 @@ import * as Plugin from "./quartz/plugins"
 const config: QuartzConfig = {
   configuration: {
     pageTitle: "br1dge@note:~$",
-    pageTitleSuffix: "bridge@note:~$",
+    pageTitleSuffix: " | bridge@note:~$",
     enableSPA: true,
     enablePopovers: true,
     analytics: {

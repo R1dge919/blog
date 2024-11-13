@@ -1,5 +1,5 @@
 ---
-title: Cap writeup
+title: HTB Cap
 draft: false
 tags:
   - "#HackTheBox"
