@@ -21,29 +21,36 @@ Amazonで安売りされていた格安小型PCを買って、Proxmox（仮想�
 Proxmox本体について、自宅ネットワーク（192.168.0.0/24）だけでなく、仮想ネットワーク（10.0.0.0/24）にも所属するよう設定します。
 ここでは、`/etc/network/interfaces`を編集して、以下のように記述します。
 ```ini
-auto lo
-iface lo inet loopback
+auto lo  
+iface lo inet loopback  
+  
+auto enp3s0  
+iface enp3s0 inet manual  
+
+iface wlp1s0 inet manual  
 
 # 自宅ネットワーク用
-# 環境によっては「enp3s0」でない可能性がある
-auto enp3s0
-iface enp3s0 inet static
-        address 192.168.0.254/24
-        gateway 192.168.0.1
+auto vmbr0  
+iface vmbr0 inet static  
+       address 192.168.0.254/24  
+       gateway 192.168.0.1  
+       bridge-ports enp3s0  
+       bridge-stp off  
+       bridge-fd 0  
 
-# 無線LAN（つかわない）
-iface wlp1s0 inet manual
-
-# 仮想ネットワーク用
-auto vmbr0
-iface vmbr0 inet static
-        address 10.0.0.1/24
-        bridge-ports none
-        bridge-stp off
-        bridge-fd 0
-        post-up echo 1 > /proc/sys/net/ipv4/ip_forward
-        post-up iptables -t nat -A POSTROUTING -s '10.0.0.0/24' -o enp3s0 -j MASQUERADE
-        post-down iptables -t nat -D POSTROUING -s '10.0.0.0/24' -o enp3s0 -j MASQUERADE
+# VM用仮想ネットワーク
+auto vmbr1  
+iface vmbr1 inet static  
+       address 10.0.0.1/24  
+       bridge-ports none  
+       bridge-stp off  
+       bridge-fd 0  
+       post-up echo 1 > /proc/sys/net/ipv4/ip_forward  
+       post-up iptables -t nat -A POSTROUTING -s '10.0.0.0/24' -o vmbr0 -j MASQUERADE  
+       post-down iptables -t nat -D POSTROUING -s '10.0.0.0/24' -o vmbr0 -j MASQUERADE  
+#       post-up echo 1 > /proc/sys/net/ipv4/conf/enp3s0/proxy_arp  
+  
+source /etc/network/interfaces.d/*
 ```
 
 ### ②ルーターの設定
